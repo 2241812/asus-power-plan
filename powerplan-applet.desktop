@@ -1,0 +1,6 @@
+[Desktop Entry]
+Type=Application
+Name=Power Plan Applet
+Exec=/usr/local/bin/powerplan-applet
+Terminal=false
+X-GNOME-Autostart-enabled=true

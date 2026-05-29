@@ -4,9 +4,9 @@ A simple system tray applet for Linux Mint Cinnamon that lets you switch between
 
 ## Why this exists
 
-After trying to control the fan on an ASUS Vivobook X512DA (AMD Ryzen) running Linux, we found that **the embedded controller is locked at the firmware level** — no software tool (AFC, NBFC-linux, ec_sys, dev_port, acpi_ec) could read/write EC registers. The fan is controlled entirely by firmware with a conservative curve.
+After trying to control the fan on my ASUS Vivobook X512DA (AMD Ryzen) running Linux, I found that **the embedded controller is locked at the firmware level** — no software tool (AFC, NBFC-linux, ec_sys, dev_port, acpi_ec) could read/write EC registers. The fan is controlled entirely by firmware with a conservative curve.
 
-Since we couldn't control the fan directly, the alternative was to **reduce heat output** by limiting CPU power draw via RyzenAdj. This applet provides three profiles so you can choose between lower temperatures or higher performance depending on what you're doing.
+Since I couldn't control the fan directly, the alternative was to **reduce heat output** by limiting CPU power draw via RyzenAdj. This applet provides three profiles so you can choose between lower temperatures or higher performance depending on what you're doing.
 
 ## Requirements
 

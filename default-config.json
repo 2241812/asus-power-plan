@@ -1,0 +1,20 @@
+{
+  "performance": {
+    "label": "Performance",
+    "stapm_limit": 15000,
+    "fast_limit": 30000,
+    "slow_limit": 25000
+  },
+  "balanced": {
+    "label": "Balanced",
+    "stapm_limit": 12000,
+    "fast_limit": 18000,
+    "slow_limit": 15000
+  },
+  "powersaver": {
+    "label": "Power Saver",
+    "stapm_limit": 8000,
+    "fast_limit": 12000,
+    "slow_limit": 10000
+  }
+}

@@ -83,6 +83,39 @@ It shows a computer icon in the system tray:
 | Balanced | 12W | 18W | 15W | Daily browsing, office work |
 | Power Saver | 8W | 12W | 10W | Low-load tasks, maximizing battery |
 
+## Custom profiles
+
+You can add your own profiles by editing `~/.config/powerplan.json`. This file is created automatically on first launch. Example:
+
+```json
+{
+  "performance": {
+    "label": "Performance",
+    "stapm_limit": 15000,
+    "fast_limit": 30000,
+    "slow_limit": 25000
+  },
+  "balanced": {
+    "label": "Balanced",
+    "stapm_limit": 12000,
+    "fast_limit": 18000,
+    "slow_limit": 15000
+  },
+  "powersaver": {
+    "label": "Power Saver",
+    "stapm_limit": 8000,
+    "fast_limit": 12000,
+    "slow_limit": 10000
+  }
+}
+```
+
+- **Keys** (e.g. `performance`, `balanced`) must be unique and are used internally.
+- **label** is what appears in the menu.
+- **stapm_limit**, **fast_limit**, **slow_limit** are in milliwatts (divide by 1000 for watts).
+
+Add a new entry following the same structure, restart the applet, and it will appear in the menu.
+
 ## System tray icon not showing?
 
 Restart Cinnamon with **Alt+F2**, type `r`, Enter.

@@ -2,11 +2,34 @@
 
 A simple system tray applet for Linux Mint Cinnamon that lets you switch between CPU power limits on ASUS AMD laptops.
 
-## Why this exists
+## The problem
 
-After trying to control the fan on my ASUS Vivobook X512DA (AMD Ryzen) running Linux, I found that **the embedded controller is locked at the firmware level** — no software tool (AFC, NBFC-linux, ec_sys, dev_port, acpi_ec) could read/write EC registers. The fan is controlled entirely by firmware with a conservative curve.
+This laptop (ASUS Vivobook X512DA) uses an **AMD Ryzen processor**. On AMD-based ASUS laptops, the embedded controller (EC) that manages the fan is **locked at the firmware level** — the manufacturer doesn't expose it to the operating system. This means no software tool can read or write the EC registers that control fan speed.
 
-Since I couldn't control the fan directly, the alternative was to **reduce heat output** by limiting CPU power draw via RyzenAdj. This applet provides three profiles so you can choose between lower temperatures or higher performance depending on what you're doing.
+I tried everything:
+- **asus-fan-control (AFC)** — failed with `AE_NOT_FOUND` (acpi_call inaccessible)
+- **NBFC-linux** with `ec_sys` — EC dump returned all zeros (can't read registers)
+- **NBFC-linux** with `dev_port` — same result, EC reads all zeros
+- **NBFC-linux** with `acpi_ec` (DKMS module) — same result
+- **pwmconfig** — found no PWM-capable sensors
+
+None of these worked because the hardware itself blocks software access to the fan controller. The fan runs on its own firmware-defined curve, which is conservative — it lets the CPU reach 87°C before ramping to ~3900 RPM.
+
+## Why this applet then?
+
+Since I **cannot control the fan directly**, the next best thing is to **reduce the heat it needs to deal with**. By lowering the CPU power limits via RyzenAdj, the CPU generates less heat, which means:
+
+- The fan stays quieter because temperatures stay lower
+- The laptop runs cooler overall
+- Battery life is slightly improved under load
+
+This applet puts three power limit profiles in the system tray so you can quickly switch between them depending on what you're doing — without opening a terminal.
+
+## What this applet does NOT do
+
+- It does **not** control fan speed directly (the hardware won't allow it)
+- It does **not** undervolt the CPU (RyzenAdj can't set voltage offsets on Zen+ mobile)
+- It does **not** replace Cinnamon's power management (those control display/suspend, not CPU wattage)
 
 ## Requirements
 

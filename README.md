@@ -1,6 +1,6 @@
-# ASUS Power Plan Applet
+# ASUS AMD Power Plan Applet
 
-A simple system tray applet for Linux Mint Cinnamon that lets you switch between CPU power limits on ASUS AMD laptops.
+System tray applet for Linux Mint Cinnamon to limit CPU wattage on ASUS AMD laptops where the fan cannot be controlled due to a firmware-locked embedded controller.
 
 ## The problem
 

@@ -1,0 +1,28 @@
+{
+    "layout1": {
+        "type": "layout",
+        "pages": ["profiles_page"],
+        "profiles_page": {
+            "type": "page",
+            "title": "Custom Profiles",
+            "sections": ["profiles_section"]
+        },
+        "profiles_section": {
+            "type": "section",
+            "title": "Power Profiles"
+        }
+    },
+    "custom-profiles": {
+        "type": "list",
+        "default": [],
+        "description": "Custom power profiles",
+        "columns": [
+            { "id": "key", "title": "ID", "type": "string", "default": "" },
+            { "id": "label", "title": "Label", "type": "string", "default": "" },
+            { "id": "stapm", "title": "STAPM (mW)", "type": "integer", "default": 12000 },
+            { "id": "fast", "title": "Fast Limit (mW)", "type": "integer", "default": 18000 },
+            { "id": "slow", "title": "Slow Limit (mW)", "type": "integer", "default": 15000 },
+            { "id": "icon", "title": "Icon", "type": "string", "default": "medium" }
+        ]
+    }
+}

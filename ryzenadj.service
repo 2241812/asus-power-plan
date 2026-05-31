@@ -1,9 +1,0 @@
-[Unit]
-Description=RyzenAdj power limit adjustment
-
-[Service]
-Type=oneshot
-ExecStart=/usr/local/bin/ryzenadj --stapm-limit=12000 --fast-limit=18000 --slow-limit=15000
-
-[Install]
-WantedBy=multi-user.target

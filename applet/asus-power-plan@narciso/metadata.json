@@ -1,0 +1,8 @@
+{
+    "uuid": "asus-power-plan@narciso",
+    "name": "ASUS AMD Power Plan",
+    "description": "Switch CPU power limits on ASUS AMD laptops where the fan cannot be controlled due to a locked embedded controller",
+    "cinnamon-version": ["5.0", "5.2", "5.4", "5.6", "5.8", "6.0", "6.2"],
+    "author": "Narciso III",
+    "last-edited": 1718496000
+}
